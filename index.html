@@ -1,182 +1,166 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
+
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;canvas id="canvas" width="400" height="300" style="border:1px solid#000000;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Your browser does not support the HTML canvas tag.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Simple vector in 3D with numbers for x, y and z</p>
-<p class="p1"><span class="Apple-converted-space">        </span>class Vec3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>constructor(x, y, z) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.x = x</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.y = y</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.z = z</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Add other vector to this one and return the result</p>
-<p class="p1"><span class="Apple-converted-space">        </span>class other {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>constructor(x, y, z) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>other.x = x</p>
-<p class="p1"><span class="Apple-converted-space">                </span>other.y = y</p>
-<p class="p1"><span class="Apple-converted-space">                </span>other.z = z</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>add(other)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return new Vec3(this.x + other.x, this.y + other.y, this.z + other.z)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Subtract other vector from this one and return the result</p>
-<p class="p1"><span class="Apple-converted-space">        </span>minus(other)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return new Vec3(this.x - other.x, this.y - other.y, this.z - other.z)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Multiply other vector by this one and return the result</p>
-<p class="p1"><span class="Apple-converted-space">        </span>multiply(other)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return new Vec3(this.x * other.x + this.y + other.y + this.z * other.z)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Scale this vector by the number scalar and return the result</p>
-<p class="p1"><span class="Apple-converted-space">        </span>scale(scalar)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Calculate the dot product of this vector with the other and return the result</p>
-<p class="p1"><span class="Apple-converted-space">        </span>dot(other)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{ }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Calculate and return the magnitude of this vector</p>
-<p class="p1"><span class="Apple-converted-space">        </span>magnitude()</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{ }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Calculate and return the magnitude of this vector without the square root</p>
-<p class="p1"><span class="Apple-converted-space">        </span>magnitudeSquared()</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{ }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Return a normalised version of this vector</p>
-<p class="p1"><span class="Apple-converted-space">        </span>normalised()</p>
-<p class="p1"><span class="Apple-converted-space">        </span>{ }</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// A sphere in 3D space. Has centre, radius and colour all of which are Vec3s</p>
-<p class="p1"><span class="Apple-converted-space">        </span>class Sphere {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>constructor(centre, radius, colour) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.centre = centre</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.radius = radius</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.colour = colour</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Calculate the point on the sphere<span class="Apple-converted-space">  </span>where the ray intersects using<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// a quadratic equation and return the t value of the ray for that point</p>
-<p class="p1"><span class="Apple-converted-space">            </span>// If two solutions exist return the minus solution</p>
-<p class="p1"><span class="Apple-converted-space">            </span>// If no solutions exist return -1</p>
-<p class="p1"><span class="Apple-converted-space">            </span>rayIntersects(ray) { }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Ray which has an origin and direction, both are Vec3s</p>
-<p class="p1"><span class="Apple-converted-space">        </span>class Ray {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>constructor(origin, direction) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.origin = origin</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.direction = direction</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// Calculate and return the point in space (a Vec3) for this ray for the given value of t</p>
-<p class="p1"><span class="Apple-converted-space">            </span>pointAt(t) { }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// The result of casting a ray into our scene</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Position is the point where the ray intersects a sphere in the scene</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Normal is the normal unit vector of the sphere at the intersection point</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// t is the t value along the ray where the intersection point is.<span class="Apple-converted-space">  </span>This value should, be -1 when the ray hits nothing</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// SphereIndex is the array index of the sphere hit by the ray</p>
-<p class="p1"><span class="Apple-converted-space">        </span>class RayCastResult {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>constructor(position, normal, t, sphereIndex) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.position = position</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.normal = normal</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.t = t</p>
-<p class="p1"><span class="Apple-converted-space">                </span>this.sphereIndex = sphereIndex</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Calculate the intersection point and normal when a ray hits a sphere. Returns a RayCastResult.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function hit(ray, t, sphereIndex) { }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Return a RayCastResult when a ray misses everything in the scene</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function miss() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return new RayCastResult(new Vec3(0, 0, 0), new Vec3(0, 0, 0), -1, -1)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Check whether a ray hits anything in the scene and return a RayCast Result</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function traceRay(ray) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return miss()</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Calculate and return the background colour based on the ray</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function backgroundColour(ray) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return new Vec3(0.3, 0.5, 0.9) // Blue</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Returns the colour the ray should have as a Vec3 with RGB values in [0,1]</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function rayColour(ray) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let castResult = traceRay(ray)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (castResult.t &lt; 0) return backgroundColour(ray)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>return new Vec3(1, 0, 0) // Red</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Sets a pixel at (x, y) in the canvas with an RGB Vec3</p>
-<p class="p1"><span class="Apple-converted-space">        </span>function setPixel(x, y, colour) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>var c = document.getElementById("canvas")</p>
-<p class="p1"><span class="Apple-converted-space">            </span>var ctx = c.getContext("2d")</p>
-<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillStyle = "rgba(" + colour.x + "," + colour.y + "," + colour.z + "," + 1 + ")"</p>
-<p class="p1"><span class="Apple-converted-space">            </span>ctx.fillRect(x, c.height - y, 1, 1)</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const spheres = new Array(</p>
-<p class="p1"><span class="Apple-converted-space">            </span>new Sphere(new Vec3(0, 0, -1), 0.3, new Vec3(1, 0, 0)), <span class="Apple-converted-space">      </span>// Red sphere</p>
-<p class="p1"><span class="Apple-converted-space">            </span>new Sphere(new Vec3(0, 0.2, -0.8), 0.15, new Vec3(0, 0, 1)),<span class="Apple-converted-space">  </span>// Blue sphere</p>
-<p class="p1"><span class="Apple-converted-space">            </span>new Sphere(new Vec3(0, -100.5, -1), 100, new Vec3(0, 1, 0)) <span class="Apple-converted-space">  </span>// Big green sphere</p>
-<p class="p1"><span class="Apple-converted-space">        </span>);</p>
-<p class="p2"><br></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Main code</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let imageWidth = document.getElementById("canvas").width</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let imageHeight = document.getElementById("canvas").height</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let aspectRatio = document.getElementById("canvas").height / document.getElementById("canvas").width</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>let colour = new Vec3(0, 0, 0)</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>for (let i = 0; i &lt; imageWidth; i++) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>for (let j = 0; j &lt;= imageHeight; j++) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>setPixel(i, j, colour)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <canvas id="canvas" width="400" height="300" style="border:1px solid#000000;">
+    Your browser does not support the HTML canvas tag.
+  </canvas>
+
+  <script>
+
+
+    // Simple vector in 3D with numbers for x, y and z
+    class Vec3 {
+      constructor(x, y, z) {
+        this.x = x
+        this.y = y
+        this.z = z
+      }
+    }
+    // Add other vector to this one and return the result
+  
+        other.x = x
+        other.y = y
+        other.z = z
+      }
+    }
+    add(other)
+    {
+      return new Vec3(this.x + other.x, this.y + other.y, this.z + other.z)
+    }
+
+    // Subtract other vector from this one and return the result
+    minus(other)
+    {
+      return new Vec3(this.x - other.x, this.y - other.y, this.z - other.z)
+    }
+
+    // Multiply other vector by this one and return the result
+    multiply(other)
+    {
+      return new Vec3(this.x * other.x + this.y + other.y + this.z * other.z)
+    }
+
+    // Scale this vector by the number scalar and return the result
+    scale(scalar)
+    {
+      return new Vec3(this.x * scalar )
+    }
+
+    // Calculate the dot product of this vector with the other and return the result
+    dot(other)
+    { }
+
+    // Calculate and return the magnitude of this vector
+    magnitude()
+    { }
+
+    // Calculate and return the magnitude of this vector without the square root
+    magnitudeSquared()
+    { }
+
+    // Return a normalised version of this vector
+    normalised()
+    { }
+
+    // A sphere in 3D space. Has centre, radius and colour all of which are Vec3s
+    class Sphere {
+      constructor(centre, radius, colour) {
+        this.centre = centre
+        this.radius = radius
+        this.colour = colour
+      }
+
+      // Calculate the point on the sphere  where the ray intersects using 
+      // a quadratic equation and return the t value of the ray for that point
+      // If two solutions exist return the minus solution
+      // If no solutions exist return -1
+      rayIntersects(ray) { }
+    }
+
+    // Ray which has an origin and direction, both are Vec3s
+    class Ray {
+      constructor(origin, direction) {
+        this.origin = origin
+        this.direction = direction
+      }
+
+      // Calculate and return the point in space (a Vec3) for this ray for the given value of t
+      pointAt(t) { }
+    }
+
+    // The result of casting a ray into our scene
+    // Position is the point where the ray intersects a sphere in the scene
+    // Normal is the normal unit vector of the sphere at the intersection point
+    // t is the t value along the ray where the intersection point is.  This value should, be -1 when the ray hits nothing
+    // SphereIndex is the array index of the sphere hit by the ray
+    class RayCastResult {
+      constructor(position, normal, t, sphereIndex) {
+        this.position = position
+        this.normal = normal
+        this.t = t
+        this.sphereIndex = sphereIndex
+      }
+    }
+
+    // Calculate the intersection point and normal when a ray hits a sphere. Returns a RayCastResult.
+    function hit(ray, t, sphereIndex) { }
+
+    // Return a RayCastResult when a ray misses everything in the scene
+    function miss() {
+      return new RayCastResult(new Vec3(0, 0, 0), new Vec3(0, 0, 0), -1, -1)
+    }
+
+    // Check whether a ray hits anything in the scene and return a RayCast Result
+    function traceRay(ray) {
+      return miss()
+    }
+
+    // Calculate and return the background colour based on the ray
+    function backgroundColour(ray) {
+      return new Vec3(0.3, 0.5, 0.9) // Blue
+    }
+
+    // Returns the colour the ray should have as a Vec3 with RGB values in [0,1]
+    function rayColour(ray) {
+      let castResult = traceRay(ray)
+      if (castResult.t < 0) return backgroundColour(ray)
+      return new Vec3(1, 0, 0) // Red
+    }
+
+    // Sets a pixel at (x, y) in the canvas with an RGB Vec3
+    function setPixel(x, y, colour) {
+      var c = document.getElementById("canvas")
+      var ctx = c.getContext("2d")
+      ctx.fillStyle = "rgba(" + colour.x + "," + colour.y + "," + colour.z + "," + 1 + ")"
+      ctx.fillRect(x, c.height - y, 1, 1)
+    }
+
+    const spheres = new Array(
+      new Sphere(new Vec3(0, 0, -1), 0.3, new Vec3(1, 0, 0)),       // Red sphere
+      new Sphere(new Vec3(0, 0.2, -0.8), 0.15, new Vec3(0, 0, 1)),  // Blue sphere
+      new Sphere(new Vec3(0, -100.5, -1), 100, new Vec3(0, 1, 0))   // Big green sphere
+    );
+
+
+    // Main code
+    let imageWidth = document.getElementById("canvas").width
+    let imageHeight = document.getElementById("canvas").height
+    let aspectRatio = document.getElementById("canvas").height / document.getElementById("canvas").width
+
+    let colour = new Vec3(0, 0, 0)
+
+    for (let i = 0; i < imageWidth; i++) {
+      for (let j = 0; j <= imageHeight; j++) {
+        setPixel(i, j, colour)
+      }
+    }
+
+  </script>
+
 </body>
+
+
 </html>
